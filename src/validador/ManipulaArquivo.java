@@ -51,7 +51,9 @@ public class ManipulaArquivo {
     private void lerArquivo() throws IOException, RuntimeException {
         String linha = getArquivo().readLine();
         String nomeTag = "";
+        int numLinha = 0;
         while ((linha) != null) {
+            numLinha++;
             int i = 0;
             while (i < linha.length() - 1) {
                 if (linha.charAt(i) == '<') {
@@ -78,7 +80,7 @@ public class ManipulaArquivo {
                             pilha.pop();
                             nomeTag = "";
                         } else {
-                            throw new FechaTagException(pilha.peek(), nomeTag);
+                            throw new FechaTagException(numLinha, pilha.peek(), nomeTag);
                         }
                     }
                 } else {

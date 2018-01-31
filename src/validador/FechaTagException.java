@@ -11,9 +11,9 @@ package validador;
  */
 public class FechaTagException extends RuntimeException {
 
-    public FechaTagException(String tagEsperada, String tagEncontrada) {
-        super("Foi encontrada a tag '" + tagEncontrada + "' quando era esperada " +
-                "a tag '" + tagEsperada + "'.");
+    public FechaTagException(int numLinha, String tagEsperada, String tagEncontrada) {
+        super("Linha " + numLinha + ": Foi encontrada a tag '" + tagEncontrada +
+                "' quando era esperada a tag '" + tagEsperada + "'.");
     }
     
 }
